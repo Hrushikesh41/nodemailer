@@ -5,12 +5,14 @@ const router = express.Router();
 
 const email = {
     userEmail : "",
-    from : "hkokardekar@gmail.com"
+    from : "SENDERS EMAIL ID COMES HERE"
 }
 
 const otp = Math.floor(1000 + Math.random() * 9000)
 
 router.post("/send", (req, res)=>{
+
+    // requesting Recievers Email Address
     const userMail = req.body.email;
 
     email.userEmail = userMail;
@@ -19,7 +21,7 @@ router.post("/send", (req, res)=>{
         service : "gmail",
         auth : {
             user : email.from,
-            pass : "rhzwbqiwrcamdnww"
+            pass : "YOUR GOOGLE APP PASSWORD COMES HERE"
         }
     })
 
@@ -48,7 +50,7 @@ router.post("/verify", (req, res)=>{
             service : "gmail",
             auth : {
                 user : email.from,
-                pass : "rhzwbqiwrcamdnww"
+                pass : "YOUR GOOGLE APP PASSWORD COMES HERE"
             }
         })
 
